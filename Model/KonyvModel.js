@@ -16,7 +16,7 @@ class KonyvModel {
             .then((data) => {
                 console.log('Success:', data);
                 this.#konyvekTomb = data.konyv;
-                console.log(this.#konyvekTomb);
+                //console.log(this.#konyvekTomb);
                 myCallBack(this.#konyvekTomb);
             })
             .catch((error) => {

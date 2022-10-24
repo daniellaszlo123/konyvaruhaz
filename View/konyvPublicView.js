@@ -5,28 +5,31 @@ class KonyvPublicView{
         <div class="termek">
             <h2>Cím: ${elem.cim}</h2>
             <p>Szerző: ${elem.szerzo}</p>
-            <p>Ár: ${elem.ar}</p>
+            <p>Ár: ${elem.ar} Ft</p>
             <button class="megtekint">Megtekintés</button>
             <button class="kosarba">Kosárba</button>
         </div>
         `)
+        this.elemId=elem.id;
 
         this.divElem=szuloElem.children("div:last-child")
-        console.log(this.divElem);
+        //console.log(this.divElem);
 
-        this.megtekint=this.divElem.children("nth-child(4)")
-        this.kosarba=this.divElem.children("nth-child(5)")
+        this.megtekint=this.divElem.children(":nth-child(4)")
+        this.kosarba=this.divElem.children(":nth-child(5)")
 
         this.megtekint.on("click", ()=>{
+            console.log("megtekint a viewban");
             this.kattintasTrigger("megtekint")
         })
         this.kosarba.on("click", ()=>{
+            console.log("kosarba rak a viewban");
             this.kattintasTrigger("kosarba")
         })
         
     }
-    kattintasTrigger(esemenyNev, event){
-        const esemeny= new CustomEvent(esemenyNev, {detail:event.detail})
+    kattintasTrigger(esemenyNev){
+        const esemeny= new CustomEvent(esemenyNev, {detail:this.elemId})
         window.dispatchEvent(esemeny)
     }
 }

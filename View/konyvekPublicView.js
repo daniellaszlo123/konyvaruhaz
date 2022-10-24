@@ -4,8 +4,9 @@ class KonyvekPublicView{
     constructor(tomb, szuloElem){
         szuloElem.append("<div id='container'></div>")
 
+        this.tartalomElem=szuloElem.children("div")
         tomb.forEach(konyv => {
-            new KonyvPublicView(konyv, szuloElem);
+            new KonyvPublicView(konyv, this.tartalomElem);
         });
     }
 }

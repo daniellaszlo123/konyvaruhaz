@@ -8,7 +8,11 @@ class KonyvController {
         const publikus=$("#public");
        // console.log("KonyvController");
         const konyvmodel = new KonyvModel();
-
+        const oldalNav=$("nav")
+        console.log(oldalNav);
+        oldalNav.on("click", ()=>{
+            oldalNav.remove();
+        })
         admin.on("click", ()=>{
             konyvmodel.adatBe("../adat.json", this.konyvAdatok);
 

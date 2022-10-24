@@ -16,7 +16,7 @@ class KonyvView {
 
         /*az obj egyes html elemeinek elnevezese*/
         this.rekordElem=szuloElem.children("tr:last-child");
-        console.log(this.rekordElem);
+        //console.log(this.rekordElem);
         //elnevezzuk a gombot
         this.modositElem=this.rekordElem.children("td:nth-child(5)").children("button")
         this.torolElem=this.rekordElem.children("td:nth-child(6)").children("button")
@@ -36,7 +36,7 @@ class KonyvView {
     }
 
     kattintasTrigger(esemenyNeve){
-        console.log(esemenyNeve);
+        //console.log(esemenyNeve);
         const esemeny= new CustomEvent(esemenyNeve, {detail:this.#elem.id})
         window.dispatchEvent(esemeny)
     }

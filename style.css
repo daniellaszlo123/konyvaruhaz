@@ -8,7 +8,82 @@ td {
     padding: 5px;
 }
 
+td:nth-child(5)>button{
+    padding: 5px 10px;
+    text-align: center;
+    background-color: gray;
+    cursor: pointer;
+}
+
+td:nth-child(5){
+    text-align: center;
+}
+
+td:nth-child(6){
+    text-align: center;
+}
+
+td:nth-child(6)>button{
+    padding: 5px 10px;
+    text-align: center;
+    background-color: pink;
+    cursor: pointer;
+}
+
+td{
+    background-color: rgb(134, 185, 121);
+}
+
+table{
+    max-width: 800px;
+}
+
 .termek{
     border: 1px solid black;
     padding: 5px;
+    max-width: 300px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: slateblue;
 }
+
+.termek>button{
+    background-color: wheat;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#container{
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+nav>ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav>ul>li{
+    display: inline;
+}
+
+nav>ul>li>button{
+    background-color: lightskyblue;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+
