@@ -1,0 +1,19 @@
+felhasznalo rakattint a kivalasztott termekre - ezzel general egy uj esemenyt
+a publikus felulet viewja generalja az esemenyt
+--> controller feliratkozik az esemenykezelore
+--> controller meghivja a modell metodusat
+--> modell pedig kosarba teszi a termeket
+
+megjeleniteni a kosar adatait
+publikus (konypublicview)felulet--> biew generalja az esemenyt
+controller feliratkozik az esemenykezelore
+modell: ami kezeli a kosarat kosartomb-be teszi
+kell egy kosar gomb az inedx.htmlbe - megnezzuk a kosar tartalmat
+
+uj kosarmodell : kosar adatait kezeli
+    #kosartomb
+    getkosartomb
+//kosarcontroller : kapcsolatot letrehoz a kosarmodell es a kosarview kozott
+kosarview - megjeleniti a kosar tartalmat
+    kosartomb tartalmat jeleniti meg az oldalon
+    pl tablazatban, (torlom a kosarbol, ++peldanyszam valtoztatasa)

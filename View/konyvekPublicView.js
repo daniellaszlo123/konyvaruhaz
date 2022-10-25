@@ -2,7 +2,8 @@
 import KonyvPublicView from "./KonyvPublicView.js";
 class KonyvekPublicView{
     constructor(tomb, szuloElem){
-        szuloElem.append("<div id='container'></div>")
+        //szuloElem.children(":first-child").remove()
+        szuloElem.html("<div id='container'></div>")
 
         this.tartalomElem=szuloElem.children("div")
         tomb.forEach(konyv => {

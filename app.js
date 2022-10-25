@@ -1,5 +1,5 @@
-import KonyvController from "./Controller/KonyvController.js";
+import AdminController from "./Controller/AdminController.js";
 
 $(function() {
-    new KonyvController();
+    new AdminController();
 });

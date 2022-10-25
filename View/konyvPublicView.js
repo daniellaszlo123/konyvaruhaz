@@ -1,5 +1,6 @@
 //egy konyv divben, h es p tagakkel, kosarba gomb
 class KonyvPublicView{
+    #elem
     constructor(elem, szuloElem){
         szuloElem.append(`
         <div class="termek">
@@ -10,6 +11,7 @@ class KonyvPublicView{
             <button class="kosarba">Kosárba</button>
         </div>
         `)
+        this.#elem=elem;
         this.elemId=elem.id;
 
         this.divElem=szuloElem.children("div:last-child")
@@ -19,17 +21,17 @@ class KonyvPublicView{
         this.kosarba=this.divElem.children(":nth-child(5)")
 
         this.megtekint.on("click", ()=>{
-            console.log("megtekint a viewban");
+            //console.log("megtekint a viewban");
             this.kattintasTrigger("megtekint")
         })
         this.kosarba.on("click", ()=>{
-            console.log("kosarba rak a viewban");
+            //console.log("kosarba rak a viewban");
             this.kattintasTrigger("kosarba")
         })
         
     }
     kattintasTrigger(esemenyNev){
-        const esemeny= new CustomEvent(esemenyNev, {detail:this.elemId})
+        const esemeny= new CustomEvent(esemenyNev, {detail:this.#elem})
         window.dispatchEvent(esemeny)
     }
 }

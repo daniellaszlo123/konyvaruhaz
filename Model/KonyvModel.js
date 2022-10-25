@@ -25,17 +25,18 @@ class KonyvModel {
     }
 
     adatTorol(adat){
-        console.log("törlöm", adat);
+        //console.log("törlöm", adat);
     }
     adatModosit(adat){
-        console.log("modosit", adat);
+        //console.log("modosit", adat);
     }
 
     termekKosarba(adat){
-        console.log("kosarba rak", adat);
+        //console.log("kosarba rak", adat);
+
     }
     termekMegtekint(adat){
-        console.log("megtekint", adat);
+        //console.log("megtekint", adat);
     }
 }
 

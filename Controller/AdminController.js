@@ -1,17 +1,22 @@
 import KonyvekView from "../View/KonyvekView.js";
 import KonyvModel from "../Model/KonyvModel.js";
 import KonyvekPublicView from "../View/konyvekPublicView.js";
+import KosarModel from "../Model/KosarModel.js";
+import KosarView from "../View/KosarView.js";
 
-class KonyvController {
+
+class AdminController {
     constructor() {
         const admin=$("#admin");
         const publikus=$("#public");
-       // console.log("KonyvController");
+        const kosarBtn=$("#kosar");
+       // console.log("AdminController");
         const konyvmodel = new KonyvModel();
+        const kosar = new KosarModel();
         const oldalNav=$("nav")
         console.log(oldalNav);
         oldalNav.on("click", ()=>{
-            oldalNav.remove();
+            //oldalNav.remove();
         })
         admin.on("click", ()=>{
             konyvmodel.adatBe("../adat.json", this.konyvAdatok);
@@ -29,13 +34,19 @@ class KonyvController {
             konyvmodel.adatBe("../adat.json", this.konyvAdatokPublikus);
 
             $(window).on("kosarba", (event)=>{
-                console.log("controllerben kosarba rak", event.detail);
+                var elem=event.detail
+                //console.log("controllerben kosarba rak", event.detail);
                 konyvmodel.termekKosarba(event.detail)
+                kosar.setKosarElem(elem);
             })
 
             $(window).on("megtekint", (event)=>{
-                console.log("controllerben megtekint", event.detail);
+                //console.log("controllerben megtekint", event.detail);
                 konyvmodel.termekMegtekint(event.detail)
+            })
+
+            kosarBtn.on("click", ()=>{
+                new KosarView(kosar.getKosarTomb(),$("main"));
             })
         })
         
@@ -57,4 +68,4 @@ class KonyvController {
     }
 }
 
-export default KonyvController;
+export default AdminController;
